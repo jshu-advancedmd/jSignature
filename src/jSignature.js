@@ -842,6 +842,8 @@ function jSignatureClass(parent, options, instanceExtensions) {
 		this.drawStartHandler = function(e) {
 		    if (!jSignatureInstance.settings.readOnly) {
 		        e.preventDefault();
+				// Publish a drawStarting event
+				jSignatureInstance.events.publish(apinamespace + '.drawStarting');
     			// for performance we cache the offsets
     			// we recalc these only at the beginning the stroke			
     			setStartValues();
